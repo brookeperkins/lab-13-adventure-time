@@ -1,10 +1,12 @@
 import allQuests from '../data.js';
-import { findById, renderSection } from '../quest/quest-utils.js';
+import { findById, renderSection } from './quest-utils.js';
 
 const main = document.querySelector('main');
 
 // placeholder for query param
-const questId = 'monsters';
+const params = new URLSearchParams(window.location.search);
+
+const questId = params.get('id');
 
 const questData = findById(allQuests, questId);
 
