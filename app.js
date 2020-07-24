@@ -1,4 +1,4 @@
-import { makeUser } from './user-utils.js';
+import { makeUser } from './userUtils.js';
 // import functions and grab DOM elements
 const form = document.querySelector('form');
 

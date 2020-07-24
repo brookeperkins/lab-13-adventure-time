@@ -1,4 +1,4 @@
-import { renderSection } from '../quest/quest-utils.js';
+import { renderSection } from '../quest/questUtils.js';
 
 const test = QUnit.test;
 
