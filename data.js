@@ -1,145 +1,115 @@
-const monsters = {
-    id: 'monsters',
-    title: 'A Den of Monsters',
+const study = {
+    id: 'study',
+    title: `Check Monsieur Bovarian's Study`,
     map: {
         top: '89%',
         left: '44%'
     },
-    image: 'http://www.placekitten.com/200/200',
+    image: './assets/study.jpg',
     description: `
-        You enter the quest chamber only to be confronted by a hoard of
-        monsters. And they look hungry. What do you do?
+        You and Poirot enter Monsieur Bovarian's study. Maybe there's a clue. Where do you look?
     `,
     choices: [{
-        id: 'negotiate',
-        description: 'Negotiate with them',
+        id: 'desk',
+        description: 'The desk, strewn with books and papers.',
         result: `
-            Knowing the monsters are not too bright, you offer to go buy them all
-            turkey dinners from the village pub. They give you 35 gold for meals
-            that will never be delivered. I hope you can live with yourself. 
+            Ugh, it's just his unpublished poems. LAME. Or is he the voice of his generation? Either way, not helpful. 
         `,
-        hp: 0,
-        gold: 35
+        hp: 10,
+        clues: 1
     }, {
-        id: 'fight',
-        description: 'Fiiiiiggghhhttt!',
+        id: 'wall',
+        description: 'Uh, those papers attached to the wall with ominous red markings?',
         result: `
-            Brandishing your sword you let out a warrior's cry and charge into the monsters
-            hacking and slashing. Before long you stand panting gazing across the bodies of
-            your vanquished foes. The bad news is you take 30 hp damage. The good news is you
-            find 50 gold.
+           These papers are a radical antifeminist manifesto! And we see Madame Bovarian's photo, with "I want to kill this woman" written in red letters! Seems promising? And super problematic.
         `,
-        hp: -30,
-        gold: 50
+        hp: 50,
+        clues: 150
     }, {
-        id: 'run',
-        description: 'Run away like good Sir Robin',
+        id: 'pockets',
+        description: 'Check your pockets.',
         result: `
-            As you make a dash for the door a giant spider descends and take a bite of flesh,
-            causing 50 hp damage.
+            For real? Why? Why would there be a clue here. You're not very good at this.
         `,
         hp: -50,
-        gold: 0
+        clues: 1
     }]
 };
 
-const dragon = {
-    id: 'dragon',
-    title: 'A Problem Dragon',
+const mistress = {
+    id: 'mistress',
+    title: `Investigate Monsieur Bovarian's former mistress`,
     map: {
         top: '57%',
         left: '67%'
     },
     image: 'http://www.placekitten.com/200/200',
-    audio: 'dragon.wav',
-    action: 'dragon-growl.aiff',
     description: `
-        You travel to a nearby village you have heard is being
-        terrorized by a dragon. Sure enough as you rent a room
-        in a local inn, you go outside and see the dragon about
-        to lay seige! What do you do?
+        Okay, so Ms. Muffet has been awful quiet since this murder went down. Poirot asks, "qu'est-ce-que c'est le deal with her?" How do you want to handle this?
     `,
     choices: [{
-        id: 'run',
-        description: 'Get the hell out of the village',
+        id: 'cafe',
+        description: 'Meet her at a cafe for questioning',
         result: `
-            You high tail it in the opposite direction. Luckily,
-            in the panic you find a bag on the ground with 15 gold.
-            Unluckily, you trip over a discarded wagon wheel on your
-            way out of town and take 40 hp damage. 
+            You order a coffee and sit and wait as Poirot criticizes your choice to put oat milk in your coffee. She never shows! And this coffee was five dollars! 
         `,
         hp: -35,
-        gold: 35
+        clues: 35
     }, {
-        id: 'fight',
-        description: 'Fiiiiiggghhhttt!',
+        id: 'snoop',
+        description: `Snoop around her house while she's at Goat Yoga`,
         result: `
-            You attempt to charge towards the dragon, who sees you approach
-            and let's loose a fireball. You wake up the next morning and the
-            village has been completely burned to the ground.
-            Oh, and you take 45 hp damage.
+            One of the goats was rabid, and class ended early! You and Poirot duck into Ms. Moffat's shower to hide out until nightfall, and overhear her talking on the phone about someone getting what they deserved? Seems promising. When she goes upstairs, you both sneak out through a doggy door in the back.
         `,
-        hp: -45,
-        gold: 0
+        hp: 45,
+        clues: 100
     }, {
-        id: 'archer',
-        description: 'Emulate that guy from LOR who shot an arrow',
+        id: 'accuse',
+        description: 'Accuse her of murdering Madame Bovarian',
         result: `
-            Inspired by the legend of Bard the Bowman, you notice a
-            stunned archer standing nearby and take their bow and quiver,
-            climb to the top of a tall tower and take aim. On the dragon's
-            next pass you steady your aim and let one fly. Amazingly,
-            you strike the dragon in the eye, piercing into the brain and
-            killing the dragon instantly. The villagers declare you their hero
-            and award you 90 gold.
+            Oh, okay, we see how it is! Just because she's a working woman without a husband you think she has nothing better to do than to murder her lover's wife? Have you ever even heard of feminism? Really not cool, man. In fact, you'll probably never get hired in this town again because you are ridiculously antiquated. Poirot pretends not to know you.
         `,
-        hp: 0,
-        gold: 90
+        hp: -30,
+        clues: 1
     }]
 };
 
-const treasure = {
-    id: 'treasure',
-    title: 'The Golden Treasure',
+const question = {
+    id: 'question',
+    title: 'Question the Townspeople',
     map: {
         top: '31%',
         left: '5%'
     },
     image: 'http://www.placekitten.com/200/200',
-    audio: 'treasure-chests.wav',
-    action: 'chest-opening.wav',
     description: `
-        As you enter the quest chamber you notice three chests before you.
-        Just as you start to imagine the wealth, you see a giant serpent
-        emerge from the back of the chamber. You'll need to make a run for it,
-        but you have time to open one chest before you take off. Which one 
-        do you choose?
+        Don't let the picturesque, pastoral landscapes, farmer's markets, and family-owned, gluten-free bakeries fool you; this little town has some secrets! Poirot surveys the scene and asks, "Quelle personne should we question first?"
     `,
     choices: [{
-        id: 'wooden',
-        description: 'A Wooden Chest',
-        result: 'You grab 40 gold pieces!',
-        hp: 0,
-        gold: 40
+        id: 'professor',
+        description: 'Professor Smallbottom',
+        result: `The professor says she overheard the late Madame Bovarian's husband talking on the phone in hushed tones, which is honestly one of the most suspicious things to do. Poirot checks out Monsieur Bovarian's phone records, and it seems he's booked a one-way ticket to Aruba! Hmmmmm!`,
+        hp: 20,
+        clues: 40
     }, {
-        id: 'golden',
-        description: 'A Golden Chest',
-        result: 'Oh no! The chest is booby trapped with poison and you take 50 hp damage',
+        id: 'landscaper',
+        description: `The Bovarians' landscaper`,
+        result: `Okay, this is just a college kid looking for some extra cash, and has no idea what's going on. All he does is sit on the lawn mower and take shirtless selfies to post to Snapchat. Poirot asks, "qu'est-ce que c'est le Snapchat?"`,
         hp: -50,
-        gold: 0
+        clues: 1
     }, {
-        id: 'jeweled',
-        description: 'A Jeweled Chest',
-        result: 'A warm light engulfs you and you gain 35 hp',
-        hp: 35,
-        gold: 0
+        id: 'neighbor',
+        description: 'The neighbors',
+        result: `Poirot starts walking to the front door, when you both notice a Beware of Dog sign. The dog in question is a really yappy terrier, and Poirot gets so annoyed by its barking that you both have to leave before questioning anybody.`,
+        hp: -20,
+        clues: 1
     }]
 };
 
 const quests = [
-    monsters, 
-    treasure,
-    dragon
+    study, 
+    mistress,
+    question
 ];
 
 export default quests;

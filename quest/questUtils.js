@@ -49,17 +49,22 @@ export function renderSection(quest) {
 
         setUser(user);
 
-        const resultDiv = document.querySelector('#result');
+        form.classList.add('hidden');
+        button.classList.add('hidden');
+        
+
+        const resultDiv = document.createElement('div');
         resultDiv.textContent = results.result;
 
-        const nextButton = document.querySelector('#next');
+        const nextButton = document.getElementById('next');
 
         nextButton.classList.remove('hidden');
-        
+        section.append(resultDiv, nextButton);
     });
 
     form.append(button);
     section.append(div, img, form);
+    
     return section;
 }
 

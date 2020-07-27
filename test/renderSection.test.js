@@ -3,8 +3,8 @@ import { renderSection } from '../quest/questUtils.js';
 const test = QUnit.test;
 
 const quest = {
-    id: 'monsters',
-    title: 'A Den of Monsters',
+    id: 'study',
+    title: `Check the Professor's Study`,
     map: {
         top: '89%',
         left: '44%'
