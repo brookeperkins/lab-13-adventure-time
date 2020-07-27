@@ -5,15 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <title>Poirot Knows</title>
 </head>
 
 <body>
-    form goes here
+    <main>
+    <section>
+        <h2 id="story">A rich cortisan has been found dead! 
+        <br>
+        Poirot needs help to solve this case d'importance.
+        <br>
+        <br>
+        Choose your character:</h2>
+    <form>
+        <label>
+            Name
+            <input name="name" />
+        </label>
+        <br>
+        <label>
+            An Instagram influencer looking for good content
+            <input value="instagram" type="radio" name="class"/>
+        </label>
+        <label>
+            An old friend of the dear, late Madame Bovarian
+            <input value="friend" type="radio" name="class"/>
+        </label>
+        <label>
+            A traveler inadvertently roped into an adventure
+            <input value="traveler" type="radio" name="class"/>
+        </label>
+        <label>
+            A rival sleuth seeking to steal Poirot's knowledge
+            <input value="sleuth" type="radio" name="class"/>
+        </label>
+        <br>
+        <button> submit</button>
+    </form>
+    </section>
+    </main>
     <script type="module" src="app.js"></script>
 </body>
 
