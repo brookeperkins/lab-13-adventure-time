@@ -5,7 +5,7 @@ const restartButton = document.getElementById('play-again');
 
 let lose = {
     title: 'You failed!',
-    description: `${user.name}, you let Mr. X escape, even with ${user.clue} clues! Poirot is so disappointed. Another rich old cortisan will probably be murdered now. Way to go.`,
+    description: `${user.name}, you let Monsieur Bovarian escape, even with ${user.clue} clues! Poirot is so disappointed. Another rich old cortisan will probably be murdered now. Way to go.`,
     image: 'https://www.placecage.com/gif/284/196'
 };
 
