@@ -5,7 +5,7 @@ const study = {
         top: '89%',
         left: '44%'
     },
-    image: './assets/study.jpg',
+    image: '../assets/study.jpg',
     description: `
         You and Poirot enter Monsieur Bovarian's study. Maybe there's a clue. Where do you look?
     `,
@@ -43,7 +43,7 @@ const mistress = {
         top: '57%',
         left: '67%'
     },
-    image: 'http://www.placekitten.com/200/200',
+    image: '../assets/moffat.jpg',
     description: `
         Okay, so Ms. Muffet has been awful quiet since this murder went down. Poirot asks, "qu'est-ce-que c'est le deal with her?" How do you want to handle this?
     `,
@@ -81,7 +81,7 @@ const question = {
         top: '31%',
         left: '5%'
     },
-    image: 'http://www.placekitten.com/200/200',
+    image: '../assets/people.jpg',
     description: `
         Don't let the picturesque, pastoral landscapes, farmer's markets, and family-owned, gluten-free bakeries fool you; this little town has some secrets! Poirot surveys the scene and asks, "Quelle personne should we question first?"
     `,

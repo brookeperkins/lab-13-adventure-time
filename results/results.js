@@ -6,13 +6,13 @@ const restartButton = document.getElementById('play-again');
 let lose = {
     title: 'You failed!',
     description: `${user.name}, you let Monsieur Bovarian escape, even with ${user.clue} clues! Poirot is so disappointed. Another rich old cortisan will probably be murdered now. Way to go.`,
-    image: 'https://www.placecage.com/gif/284/196'
+    image: '../assets/fail.jpg'
 };
 
 let win = {
     title: 'You caught him!',
     description: `You did it, ${user.name}! You caught Monsieur Bovarian as he was trying to escape, and he's really put out about it. You found ${user.clue} clues and had ${user.hp} sleuth points. Poirot is most impressed.`,
-    image: 'https://www.stevensegallery.com/g/155/300'
+    image: '../assets/winner.jpg'
 };
 
 function renderResult(result) {
